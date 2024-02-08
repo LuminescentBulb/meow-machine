@@ -46,5 +46,4 @@ string generateCatName(char firstAlphabet) {
     }
     int random = random_int(lower, index);
     return catNames[random];
-    //TODO: Implement
 }

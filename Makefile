@@ -10,7 +10,7 @@ test: meow.exe meow_tests.exe
 
 # Compile the main executable
 meow.exe: meow.cpp
-	$(CXX) $(CXXFLAGS) meow.cpp -o meow.exe
+	$(CXX) $(CXXFLAGS) meow.cpp name_generator.cpp -o meow.exe
 
 # Compile the meow_tests executable
 meow_tests.exe: meow_tests.cpp
