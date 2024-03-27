@@ -2,9 +2,7 @@
 
 using namespace std;
 
-std::vector<std::string> catNames;
-
-void loadNameFile() {
+nameGenerator::nameGenerator() {
     ifstream inputFile("CatNames.txt");
     string input;
     while(getline(inputFile, input)) {
@@ -13,7 +11,7 @@ void loadNameFile() {
     inputFile.close();
 }
 
-bool alphabetMatch(string input, char firstLetter) {
+bool nameGenerator::alphabetMatch(string input, char firstLetter) {
     return input.at(0) == firstLetter;
 }
 
@@ -22,12 +20,12 @@ int random_int(int lower, int upper) {
     return (lower + (rand() % (upper - lower + 1)));
 }
 
-string generateCatName() {
+string nameGenerator::generateCatName() {
     int random = random_int(0, catNames.size() - 1);
     return catNames[random];
 }
 
-string generateCatName(char firstAlphabet) {
+string nameGenerator::generateCatName(char firstAlphabet) {
     vector<string> validCatNames;
     bool keepReading = true;
     auto iterator = find_if(catNames.begin(), catNames.end(),

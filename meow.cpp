@@ -5,10 +5,10 @@
 using namespace std;
 
 int main(int argc, char * argv[]) {
-    loadNameFile();
+    nameGenerator generator;
     cout << "meow" << endl;
     if (argc == 2) {
         string name = argv[1];
-        cout << name << "'s cat name is: " << generateCatName(name.at(0)) << endl;
+        cout << name << "'s cat name is: " << generator.generateCatName(name.at(0)) << endl;
     }
 }
